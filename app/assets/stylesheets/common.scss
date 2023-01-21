@@ -1,0 +1,563 @@
+body, nav, section {
+  font-family: Yu Gothic Medium,游ゴシック Medium,YuGothic,游ゴシック体,ヒラギノ角ゴ Pro W3,メイリオ,sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+h2, h3 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 39px;
+}
+
+a {
+  color: #0071c1;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+input {
+  height: 45px;
+}
+
+textarea {
+  height: 124px;
+  padding: 12px!important;
+}
+
+input, textarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+label {
+  color: #6a6a6a;
+  font-weight: 700;
+}
+
+input, textarea, label {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.alert-warning {
+  background-color: inherit;
+  border: none;
+  color: #ff4949;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.user_link {
+  align-items: center!important;
+  display: flex!important;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.header_nav {
+  align-items: center;
+  background-color: #1c1d3b;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  padding: 8px 0;
+  position: relative;
+}
+
+.header_container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.home_link_icon{
+  width: 221px;
+}
+
+.dropdown-toggle:after {
+  display: none;
+}
+
+.user_avatar {
+  border-radius: 60px;
+  margin-right: 8px;
+  width: 40px;
+}
+
+.user_name {
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 10px;
+}
+
+.nav_icon {
+  color: #fff;
+  stroke: #fff;
+  stroke-width: 2px;
+  width: 8px;
+}
+
+.header_button {
+  text-decoration: none;
+}
+
+.header_button:hover {
+  color: #fff;
+}
+
+.sign_in_link {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-right: 32px;
+}
+
+.sign_up_link {
+  background-color: #ff7757;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  padding: 6px 12px;
+}
+
+.user_link a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dropdown-menu.show {
+  min-width: 122px;
+  padding: 9px 0;
+}
+
+.dropdown_item {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 8px;
+}
+
+.dropdown_item>a {
+  color: #333;
+  display: block;
+  padding: 0!important;
+  text-decoration: none;
+  width: 100%;
+}
+
+.dropdown_item>a:hover {
+  color: inherit;
+}
+
+
+.dropdown_item_middle {
+  padding: 8px 0;
+}
+
+.dropdown-bar {
+  margin: 8px 0;
+}
+
+.footer {
+  align-items: center;
+  background-color: #1c1d3b;
+  display: flex;
+  height: 465px;
+}
+
+.footer_container {
+  max-width: 1440px;
+  padding: 0 32px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.footer_container>a {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer_logo {
+  width: 294px;
+}
+
+.footer_copy {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.SnackBar {
+  background-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+  margin: auto;
+  padding: 14px 16px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  left: 0;
+  bottom: 16px;
+  min-width: 288px;
+  width: fit-content;
+}
+
+.form_wrapper {
+  background-color: #dfe2e6;
+  display: flex;
+  height: fit-content;
+  min-height: calc(100vh - 80px);
+  padding: 60px 0 120px;
+}
+
+.form_container {
+  background-color: #fff;
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+}
+
+.form_container_title {
+  font-family: Lato,sans-serif;
+  font-size: 33px;
+  font-weight: 400;
+  line-height: 48px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.form_label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.form_label_sign_up::after {
+  content: "*";
+  color: #ff4949;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.form_input {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  color: #212529;
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 6px 12px;
+  width: 100%;
+}
+
+::placeholder {
+  font-size: 14px;
+}
+
+.form_input:focus {
+  border-color: #e0e0e0!important;
+  box-shadow: none!important;
+}
+
+.form_button {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 14px 24px;
+  width: 100%;
+}
+
+.action_button {
+  align-items: center;
+  background-color: #ff7757;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  height: 58px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.form_button:hover {
+  color: #fff;
+}
+
+.link_button {
+  border: 1px solid #e0e0e0;
+  color: #6a6a6a;
+  display: flex;
+  font-size: 16px;
+  line-height: 24px;
+  height: 52px;
+  justify-content: center;
+}
+
+.link_button:hover {
+  color: #6a6a6a;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 32px;
+}
+
+.account_section {
+  padding-top: 40px;
+  padding-bottom: 160px;
+}
+
+.user_container {
+  display: flex;
+  gap: 32px;
+  grid-gap: 32px;
+  justify-content: space-between;
+}
+
+.accountInfo {
+  background-color: #fff;
+  width: calc(100% - 32px);
+}
+
+.accountInfo_header {
+  align-items: center;
+  border-bottom: 1px solid #dfe2e6;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.accountInfo_link {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.accountInfo_link:hover {
+  color: #0071c1;
+}
+
+.accountInfo_link>img {
+  margin-right: 8px;
+}
+
+li>a, li>a:hover {
+  color: #333;
+}
+
+.tabNav_item_active>a, .tabNav_item_active>a:hover {
+  color: #ff7757;
+}
+
+.sideNav {
+  background-color: #fff;
+  border: 1px solid #dfe2e6;
+  height: fit-content;
+  width: 336px;
+}
+
+.sideNav_item {
+  padding: 20px 24px;
+}
+
+.sideNav_item:first-of-type {
+  border-bottom: 1px solid #dfe2e6;
+}
+
+.tabNav {
+  display: none;
+}
+
+.accountInfo_input_wrapper {
+  width: 75%;
+}
+
+.accountInfo_input {
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.accountInfo_input-group {
+  align-items: center;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.accountInfo_input_label {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  width: 25%;
+}
+
+.accountInfo_input_label_caption {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.accountInfo_buttons {
+  display: flex;
+  gap: 16px;
+  grid-gap: 16px;
+  justify-content: flex-end;
+}
+
+.accountInfo_button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+}
+
+.accountInfo_button_cancel {
+  border: 1px solid #e0e0e0;
+  color: #6a6a6a;
+  line-height: 44px;
+  width: 148px;
+}
+
+.accountInfo_button_save {
+  background-color: #ff7757;
+  color: #fff;
+  width: 88px;
+}
+
+.accountInfo_button_save:hover {
+  color: #fff;
+}
+
+.fileUpload_field {
+  margin-bottom: 0;
+}
+
+.fileUpload_image {
+  border-radius: 60px;
+  margin-right: 24px;
+  width: 80px;
+}
+
+.fileUpload_label {
+  background: linear-gradient(180deg,#fff,#f8f8f8);
+  border: 1px solid #dfe2e6;
+  border-radius: 8px;
+  color: #333;
+  font-size: 12px;
+  line-height: 18px;
+  height: 34px;
+  text-align: center;
+  width: 244px;
+}
+
+.fileUpload_label>span {
+  line-height: 34px;
+}
+
+.fileUpload_label>input {
+  display: none;
+}
+
+@media screen and (max-width:1280px) {
+  .form_wrapper {
+    min-height: calc(100vh - 66px);
+  }
+  
+  .form_container {
+    padding: 40px 16px;
+    width: 478px;
+  }
+  
+  .form_container_title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+  
+}
+
+@media screen and (max-width:960px) {
+  h2, h3 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+  
+  .account_section {
+    padding-top: 32px;
+    padding-bottom: 180px;
+  }
+  
+  .sideNav {
+    display: none;
+  }
+  
+  .tabNav {
+    border: 1px solid #dfe2e6;
+    display: flex;
+    margin-bottom: 32px;
+  }
+  
+  .tabNav_item {
+    padding: 16px;
+    text-align: center;
+    width: 50%;
+  }
+  
+  .tabNav_item:first-of-type {
+    border-right: 1px solid #dfe2e6;
+  }
+  
+  .accountInfo {
+    width: 100%;
+  }
+  
+  .accountInfo_link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .accountInfo_link>img {
+    margin-right: 6px;
+    width: 15px;
+  }
+}

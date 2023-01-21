@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rails-i18n'
 gem 'pry-rails'
+gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'bootstrap-sass', '3.3.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

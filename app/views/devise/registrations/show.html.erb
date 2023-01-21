@@ -1,0 +1,35 @@
+<section class="container account_section">
+  <h2>設定</h2>
+  <div class="user_container">
+    <ul class="sideNav">
+      <li class="sideNav_item tabNav_item_active"><%= link_to "アカウント", users_account_path %></li>
+      <li class="sideNav_item"><%= link_to "プロフィール", users_profile_path %></li>
+    </ul>
+    
+    <div class="accountInfo">
+      <ul class="tabNav">
+        <li class="tabNav_item tabNav_item_active"><%= link_to "アカウント", users_account_path %></li>
+        <li class="tabNav_item"><%= link_to "プロフィール", users_profile_path %></li>
+      </ul>
+      
+      <div class="accountInfo_header">
+        <h3>アカウント</h3>
+        <%= link_to edit_user_registration_path, class:"accountInfo_link" do %>
+          <img src="https://rails-02-sample.herokuapp.com/assets/icons/edit-blue-51638a3e490277aa2df5f37102d45f5fcdfd8cd6c58fc5add90a958fab5c45af.svg">
+          編集
+        <% end %>
+      </div>
+      <div class="accountInfo_input-group">
+        <label class="accountInfo_input_label">メールアドレス</label>
+        <p class="accountInfo_input_value"><%= current_user.email %></a>
+      </div>
+      <div class="accountInfo_input-group">
+        <label class="accountInfo_input_label">パスワード</label>
+        <p class="accountInfo_input_value">*********</a>
+      </div>
+    </div>
+  </div>
+    
+</section>
+
+<%= render "shared/footer" %>
