@@ -1,3 +1,190 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.firstView {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/cover-lg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 180px;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.firstView_title {
+  color: #fff;
+  font-family: Lato,sans-serif;
+  font-size: 84px;
+  font-weight: 400;
+  line-height: 101px;
+  margin-bottom: 48px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.firstViewSearch {
+  background: hsla(0,0%,100%,.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+}
+
+.firstViewSearch_input {
+  height: 58px;
+  margin-bottom: 16px;
+}
+
+.firstViewSearch_button {
+  align-items: center;
+  background-color: #ff7757;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  height: 58px;
+  justify-content: center;
+  width: 100%;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.recommendAreaSection {
+  margin-bottom: 260px;
+}
+
+.recommendAreaSection_title {
+  border-bottom: 3px solid #ff7757;
+  font-size: 44px;
+  line-height: 66px;
+  margin-bottom: 140px;
+  padding-bottom: 15px;
+  width: fit-content;
+}
+
+.recommendAreas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  grid-gap: 32px;
+}
+
+.recommendArea {
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  height: 455px;
+  justify-content: flex-end;
+  padding: 40px 24px;
+  width: calc(25% - 24px);
+}
+
+.recommendArea_tokyo {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/tokyo.jpg);
+}
+
+.recommendArea_osaka {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/osaka.jpg);
+}
+
+.recommendArea_kyoto {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/kyoto.jpg);
+}
+
+.recommendArea_sapporo {
+  background-image: url(https://rails-02-sample.herokuapp.com/assets/home/recommend-area/sapporo.jpg);
+}
+
+
+.recommendArea_name {
+  color: #fff;
+}
+
+.recommendArea_name-ja {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+.recommendArea_name-en {
+  font-family: Lato,sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+}
+
+@media screen and (max-width:1280px) {
+  .firstView {
+    height: 850px;
+    padding-top: 117px;
+  }
+  
+}
+
+@media screen and (max-width:960px) {
+  .firstView {
+    height: 750px;
+    margin-bottom: 100px;
+    padding-top: 117px;
+  }
+  
+  .firstViewSearch {
+    padding: 20px;
+    width: 478px;
+  }
+  
+}
+
+@media screen and (max-width:600px) {
+  .firstView {
+    background-image: url(https://rails-02-sample.herokuapp.com/assets/home/cover-xs.png);
+    height: 460px;
+    margin-bottom: 80px;
+    padding-top: 60px;
+  }
+  
+  .firstView_title {
+    font-size: 34px;
+    line-height: 41px;
+    margin-bottom: 24px;
+  }
+  
+  .firstViewSearch {
+    max-width: 478px;
+    padding: 16px;
+    width: 100%;
+  }
+  
+  .recommendAreaSection {
+    margin-bottom: 100px;
+  }
+  
+  .recommendAreaSection_title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+  }
+  
+  .recommendAreas {
+    gap: 16px;
+    grid-gap: 16px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .firstView_title {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+@media screen and (min-width:960px) and (max-width:1280px) {
+  .recommendArea {
+    width: calc(33.33333% - 21.33333px);
+  }
+}

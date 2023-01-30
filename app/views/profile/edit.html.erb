@@ -22,14 +22,13 @@
 
         <div class="accountInfo_input-group">
           <label class="accountInfo_input_label">アイコン画像</label>
-            <p class="fileUpload_field">
-              <%= image_tag current_user.image.url, class:"fileUpload_image" %>
-              <label class="fileUpload_label">
-                <span>画像をアップロード</span>
-                <%= f.file_field :image %>
-              </label>
-            </p>
-
+          <p class="fileUpload_field">
+            <%= image_tag current_user.avatar.url, class:"fileUpload_image" %>
+            <label class="fileUpload_label">
+              <span>画像をアップロード</span>
+              <%= f.file_field :avatar %>
+            </label>
+          </p>
         </div>
         <div class="accountInfo_input-group">
           <label class="accountInfo_input_label">名前</label>

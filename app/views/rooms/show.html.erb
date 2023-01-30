@@ -1,0 +1,59 @@
+<div class="searchRoomsForm_container">
+      
+  <%= form_with url: search_rooms_path, method: :get, local: true, class:"searchRoomsForm" do |f| %>
+    <div class="searchRoomsForm_input-group searchRoomsForm_input-group_area">
+      <img src="https://rails-02-sample.herokuapp.com/assets/icons/location-f99050d71eed25957ab10fa45301a9f665de4e918726bc58b1d038d2a1337a7a.svg">
+      <%= f.text_field :area, placeholder:"エリア名を入力", class:"form_input searchRoomsForm_input"%>
+    </div>
+    <div class="searchRoomsForm_input-group searchRoomsForm_input-group_keyword">
+      <img src="https://rails-02-sample.herokuapp.com/assets/icons/search-6ddc79988a28e9ba906fad22d395d6363099d88a0392c49df200e8f6bc9a8fec.svg">
+      <%= f.text_field :keyword, placeholder:"キーワードを入力", class:"form_input searchRoomsForm_input" %>
+    </div>
+    <%= f.submit "検索", class:"searchRoomsForm_button" %>
+  <% end %>
+
+</div>
+
+<div class="container roomDetailsContainer">
+  <div class="roomDetailsHeader">
+    <%= link_to :back, class:"roomDetailsHeader_link" do %>
+      <img src="https://rails-02-sample.herokuapp.com/assets/icons/arrow-back-blue-5ba5838a3c587f1a4be9883cc3c9f90a6bbd0da4d559b6353d943dbd7de3bd06.svg">
+      戻る
+    <% end %>
+    
+    <% if user_signed_in? %>
+      <% if @room.user_id == current_user.id %>
+        <%= link_to edit_room_path, class:"roomDetailsHeader_link" do %>
+          <img src="https://rails-02-sample.herokuapp.com/assets/icons/edit-blue-51638a3e490277aa2df5f37102d45f5fcdfd8cd6c58fc5add90a958fab5c45af.svg">
+          編集
+        <% end %>
+      <% else %>
+      
+      <% end %>
+    <% else %>
+    
+    <% end %>
+  </div>
+  
+  <div class="roomDetails">
+    <%= image_tag @room.image.url, class:"roomDetails_image" %>
+    <div class="roomDetailsBody">
+      <div class="roomDetailsBody_name-and-price">
+        <p class="roomDetails_name"><%= @room.room_name %></p>
+        <p class="roomDetails_price">¥<%= @room.price.to_s(:delimited) %>~</p>
+      </div>
+      <p class="roomDetails_address"><%= @room.address %></p>
+      <span class="room_stars">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+      </span>
+      <p class="roomDetails_content"><%= @room.detail %></p>
+      <div class="reservationForm">予約する</div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

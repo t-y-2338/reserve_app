@@ -1,0 +1,28 @@
+<% @rooms.each do |room| %>
+<div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="z-index: 1051; display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h5 id="modal-confirmLabel" class="modal-title">以下の施設を削除しますか？</h5>
+      </div>
+      <div class="modal-body">
+        <div class="confirmBody">
+          <%= image_tag room.image.url, class:"confirmBody_image" %>
+            <div>
+              <%= room.room_name %>
+              </br>
+              ¥ <%= room.price.to_s(:delimited) %>~ / 日
+            </div>
+        </div>
+        よろしければ「削除」ボタンを押してください。
+      </div>
+      <div class="modal-footer">
+        <button class="btn cancel" data-dismiss="modal" aria-hidden="true">キャンセル</button>
+        <%= button_to "削除", room, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

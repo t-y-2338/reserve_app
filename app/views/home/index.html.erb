@@ -1,2 +1,61 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="firstView">
+  <section class="container">
+    <h2 class="firstView_title">
+      Potepan Shareで</br>
+      まだ体験したことのない</br>
+      旅をしよう
+    </h2>
+    <div class="firstViewSearch">
+      <%= form_with url: search_rooms_path, method: :get, local: true do |f| %>
+        <%= f.text_field :area, placeholder:"エリア名を入力", class:"form_input firstViewSearch_input" %>
+        <%= f.submit "検索", class:"btn firstViewSearch_button" %>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <section class="recommendAreaSection">
+    <h2 class="recommendAreaSection_title">おすすめのエリア</h2>
+    <div class="recommendAreas">
+      <%= link_to search_rooms_path(area: "東京"), class:"recommendArea recommendArea_tokyo" do %>
+        <span class="recommendArea_name recommendArea_name-ja">東京</span>
+        <span class="recommendArea_name recommendArea_name-en">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+          </svg>
+          Tokyo
+        </span>
+      <% end %>
+      <%= link_to search_rooms_path(area: "大阪"), class:"recommendArea recommendArea_osaka" do %>
+        <span class="recommendArea_name recommendArea_name-ja">大阪</span>
+        <span class="recommendArea_name recommendArea_name-en">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+          </svg>
+          Osaka
+        </span>
+      <% end %>
+      <%= link_to search_rooms_path(area: "京都"), class:"recommendArea recommendArea_kyoto" do %>
+        <span class="recommendArea_name recommendArea_name-ja">京都</span>
+        <span class="recommendArea_name recommendArea_name-en">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+          </svg>
+          Kyoto
+        </span>
+      <% end %>
+      <%= link_to search_rooms_path(area: "札幌"), class:"recommendArea recommendArea_sapporo" do %>
+        <span class="recommendArea_name recommendArea_name-ja">札幌</span>
+        <span class="recommendArea_name recommendArea_name-en">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+          </svg>
+          Sapporo
+        </span>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<%= render 'shared/footer' %>

@@ -1,3 +1,186 @@
 // Place all the styles related to the Profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.account_section {
+  padding-top: 40px;
+  padding-bottom: 160px;
+}
+
+.user_container {
+  display: flex;
+  gap: 32px;
+  grid-gap: 32px;
+  justify-content: space-between;
+}
+
+.accountInfo {
+  background-color: #fff;
+  width: calc(100% - 32px);
+}
+
+.accountInfo_header {
+  align-items: center;
+  border-bottom: 1px solid #dfe2e6;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+}
+
+.accountInfo_link {
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.accountInfo_link:hover {
+  color: #0071c1;
+}
+
+.accountInfo_link>img {
+  margin-right: 8px;
+}
+
+li>a, li>a:hover {
+  color: #333;
+}
+
+.tabNav_item_active>a, .tabNav_item_active>a:hover {
+  color: #ff7757;
+}
+
+.sideNav {
+  background-color: #fff;
+  border: 1px solid #dfe2e6;
+  height: fit-content;
+  width: 336px;
+}
+
+.sideNav_item {
+  padding: 20px 24px;
+}
+
+.sideNav_item:first-of-type {
+  border-bottom: 1px solid #dfe2e6;
+}
+
+.tabNav {
+  display: none;
+}
+
+.accountInfo_input_wrapper {
+  width: 75%;
+}
+
+.accountInfo_input {
+  padding: 6px 12px;
+  width: 100%;
+}
+
+.accountInfo_input-group {
+  align-items: center;
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.accountInfo_input_label {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  width: 25%;
+}
+
+.accountInfo_input_label_caption {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.accountInfo_buttons {
+  display: flex;
+  gap: 16px;
+  grid-gap: 16px;
+  justify-content: flex-end;
+}
+
+.accountInfo_button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 58px;
+  font-size: 18px;
+}
+
+.accountInfo_button_cancel {
+  border: 1px solid #e0e0e0;
+  color: #6a6a6a;
+  line-height: 44px;
+  width: 148px;
+}
+
+.accountInfo_button_save {
+  background-color: #ff7757;
+  color: #fff;
+  width: 88px;
+}
+
+.accountInfo_button_save:hover {
+  color: #fff;
+}
+
+@media screen and (max-width:1280px) {
+  .accountForm_wrapper {
+    min-height: calc(100vh - 66px);
+  }
+  
+  .accountForm_container {
+    padding: 40px 16px;
+    width: 478px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  .account_section {
+    padding-top: 32px;
+    padding-bottom: 180px;
+  }
+  
+  .sideNav {
+    display: none;
+  }
+  
+  .tabNav {
+    border: 1px solid #dfe2e6;
+    display: flex;
+    margin-bottom: 32px;
+  }
+  
+  .tabNav_item {
+    padding: 16px;
+    text-align: center;
+    width: 50%;
+  }
+  
+  .tabNav_item:first-of-type {
+    border-right: 1px solid #dfe2e6;
+  }
+  
+  .accountInfo {
+    width: 100%;
+  }
+  
+  .accountInfo_link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .accountInfo_link>img {
+    margin-right: 6px;
+    width: 15px;
+  }
+}

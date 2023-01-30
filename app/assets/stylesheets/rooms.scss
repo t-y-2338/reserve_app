@@ -1,0 +1,417 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.searchRoomsForm_container {
+  background-color: #dfe2e6;
+  display: flex;
+  height: 125px;
+}
+
+.searchRoomsForm {
+  display: flex;
+  gap: 16px;
+  grid-gap: 16px;
+  margin: auto;
+  width: fit-content;
+}
+
+.searchRoomsForm_input-group {
+  position: relative;
+}
+
+.searchRoomsForm_input-group>img {
+  position: absolute;
+  left: 15px;
+}
+
+.searchRoomsForm_input-group_area>img {
+  top: 10px;
+}
+
+.searchRoomsForm_input-group_keyword>img {
+  top: 13px;
+}
+
+.searchRoomsForm_input {
+  height: 45px;
+  padding-left: 45px;
+  width: 285px;
+}
+
+.searchRoomsForm_button {
+  font-size: 16px;
+  line-height: 24px;
+  height: 45px;
+  width: 100px;
+}
+
+.rooms_container {
+  margin-bottom: 260px;
+  padding-top: 40px;
+}
+
+.searchRooms_result {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.searchRooms_result>span {
+  font-weight: 700;
+}
+
+.roomList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  grid-gap: 32px;
+}
+
+.room {
+  background-color: #fff8f1;
+  border-radius: 26px;
+  width: calc(33.33333% - 21.33333px);
+}
+
+.room_image {
+  aspect-ratio: 16/9;
+  border-radius: 26px 26px 0 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.roomBody_wrapper {
+  padding: 40px 24px;
+}
+
+.room_name {
+  color: #767e86;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.room_address {
+  color: #767e86;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 3px;
+}
+
+.room_stars {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.room_stars>img {
+  margin-right: 2px;
+  width: 16px;
+}
+
+
+.room_content {
+  display: -webkit-box;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.room_footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room_price {
+  color: #ff7757;
+  font-family: Lato,sans-serif;
+  font-size: 28px;
+  line-height: 39px;
+  margin-bottom: 0;
+}
+
+.room_link {
+  align-items: center;
+  background-color: #ff7757;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  font-size: 16px;
+  height: 58px;
+  justify-content: center;
+  line-height: 58px;
+  padding: 0 20px;
+  text-align: center;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.ownRoomsContainer {
+  margin-top: 40px;
+  margin-bottom: 260px;
+}
+
+.table_responsive {
+  overflow-x: auto;
+}
+
+.ownRoomsTable td {
+  padding: 16px 8px!important;
+  
+  &:last-of-type {
+    width: 59px;
+  }
+}
+
+.ownRoomsTable th, .ownRoomsTable td {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.ownRoomsTable th:first-of-type, .ownRoomsTable td:first-of-type {
+  padding-left: 0!important;
+}
+
+.ownRoomsTable td:first-of-type img {
+  width: 120px;
+}
+
+.form_wrapper {
+  display: flex;
+  height: fit-content;
+  padding: 40px 0 180px;
+}
+
+.form_container {
+  background-color: #fff;
+  margin: auto;
+  width: 702px;
+}
+
+.roomsForm_input-group {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.roomsForm_label {
+  color: #333;
+  font-size: 16px;
+  line-height: 26px;
+  width: 33%;
+}
+
+.form_label_required:after {
+  content: "*";
+  color: #ff4949;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.roomsForm_input {
+  width: 66%;
+}
+
+.roomsForm_button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  height: 45px;
+  justify-content: center;
+  line-height: 21px;
+  width: 100%;
+}
+
+.roomsForm_button-submit {
+  background-color: #ff7757;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.roomsForm_button-submit:hover {
+  color: #fff;
+}
+
+.roomsForm_button-cancel {
+  border: 1px solid #e0e0e0;
+  color: #333;
+  line-height: 44px;
+}
+
+.roomsForm_button-cancel:hover {
+  color: #333;
+}
+
+.fade:not(.show) {
+  opacity: 1;
+}
+
+.ownRoomsTable td .dropdown .dropdownMenu {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px rgba(136,152,170,20%),
+      0 4px 5px -2px rgba(136,152,170,14%);
+  min-width: 95px;
+  padding: 6px 8px;
+  top: -18px!important;
+  left: -3px!important;
+}
+
+.ownRoomsTable td .dropdown .dropdown_item {
+  padding: 0;
+}
+
+.ownRoomsTable td .dropdown .dropdown_item:first-of-type {
+  margin-bottom: 5px;
+}
+
+.dropdown_item-destroy>a, .dropdown_item-destroy>a:hover{
+  color: #ff4949;
+}
+
+.roomDetailsContainer {
+  margin-bottom: 260px;
+  padding-top: 40px;
+}
+
+.roomDetailsHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.roomDetailsHeader_link {
+  color: #0071c1;
+  display: flex;
+  font-size: 18px;
+  gap: 8px;
+  grid-gap: 8px;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.roomDetails {
+  align-items: flex-start;
+  display: flex;
+  gap: 32px;
+  grid-gap: 32px;
+}
+
+.roomDetails_image {
+  object-fit: contain;
+  width: 40%;
+}
+
+.roomDetailsBody {
+  background-color: #fff8f1;
+  padding: 40px 24px;
+}
+
+.roomDetailsBody_name-and-price {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.roomDetails_name {
+  color: #767e86;
+  font-size: 28px;
+  line-height: 39px;
+  margin-bottom: 0;
+}
+
+.roomDetails_price {
+  color: #ff7757;
+  font-family: Lato,sans-serif;
+  font-size: 38px;
+  line-height: 54px;
+  margin-bottom: 0;
+}
+
+.roomDetails_address {
+  color: #767e86;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 3px;
+}
+
+.roomDetails_content {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+@media screen and (max-width:1280px) {
+  .room_footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .room_price {
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .room_link {
+    width: 100%;
+  }
+  
+  .roomDetails_price {
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  .roomDetailsContainer {
+    margin-bottom: 200px;
+  }
+  
+  .roomDetails {
+    flex-direction: column;
+    gap: 20px;
+    grid-gap: 20px;
+  }
+  
+  .roomDetails_image {
+    width: 100%;
+  }
+  
+  .roomDetails_price {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .room_stars {
+    margin-bottom: 18px;
+  }
+  
+  .roomDetailsContainer {
+    margin-bottom: 100px;
+  }
+  
+  .roomDetailsBody {
+    padding: 24px 16px;
+  }
+  
+  .roomDetails_price {
+    font-size: 25px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+}
