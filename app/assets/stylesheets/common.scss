@@ -83,6 +83,14 @@ input, textarea, label {
   outline: none;
 }
 
+.btn:focus {
+  box-shadow: none;
+}
+
+.text-nowrap {
+  white-space: nowrap!important;
+}
+
 .header_nav {
   align-items: center;
   background-color: #1c1d3b;
@@ -238,6 +246,10 @@ input, textarea, label {
   bottom: 16px;
   min-width: 288px;
   width: fit-content;
+}
+
+.SnackBar_alert {
+  background-color: #ff4949;
 }
 
 .accountForm_wrapper {

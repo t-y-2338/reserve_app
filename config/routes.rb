@@ -14,20 +14,27 @@ Rails.application.routes.draw do
     patch 'users/profile/edit' => 'profile#update'
   end
   
-
-  
   devise_for :users, controllers: {
        registrations: 'users/registrations',
        sessions: 'users/sessions'
   }
   
   resources :users
+  
   resources :rooms do
     collection do
       get 'search'
       get 'own'
     end
   end
+  
+      
+  resources :reservations do
+    collection do
+      post 'confirm'
+    end
+  end
+
   
   resource :profile, only: [:show, :edit, :update]
 

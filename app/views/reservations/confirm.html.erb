@@ -1,0 +1,35 @@
+<div class="form_wrapper">
+  <section class="form_container">
+    <h2>予約内容の確認</h2>
+    <%= form_with model: @reservation, local: true do |f| %>
+    <%= f.hidden_field :room_id %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :start_date %>
+    <%= f.hidden_field :end_date %>
+    <%= f.hidden_field :people %>
+      <div class="reservationConfirm_value-group">
+        <p class="reservationConfirm_label">チェックイン</p>
+        <p class="reservationConfirm_value"><%= l @reservation.start_date %></p>
+      </div>
+      <div class="reservationConfirm_value-group">
+        <p class="reservationConfirm_label">チェックアウト</p>
+        <p class="reservationConfirm_value"><%= l @reservation.end_date %></p>
+      </div>
+      <div class="reservationConfirm_value-group">
+        <p class="reservationConfirm_label">日数</p>
+        <p class="reservationConfirm_value"><%= @reservation.stay_days %>日</p>
+      </div>
+      <div class="reservationConfirm_value-group">
+        <p class="reservationConfirm_label">人数</p>
+        <p class="reservationConfirm_value"><%= @reservation.people %>人</p>
+      </div>
+      <div class="reservationConfirm_value-group">
+        <p class="reservationConfirm_label">お支払い金額</p>
+        <p class="reservationConfirm_value">¥<%= @reservation.total_price.to_s(:delimited) %></p>
+      </div>
+      <p class="reservationConfirm_description">上記内容でよろしければ「確定」ボタンを押してください</p>
+      <%= f.submit "予約を確定", class:"btn reservationConfirm_button reservationConfirm_button-submit" %>
+    <% end %>
+    <%= link_to "キャンセル", room_path(@room), class:"btn reservationConfirm_button reservationConfirm_button-cancel" %>
+  </section>
+</div>

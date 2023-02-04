@@ -352,6 +352,55 @@
   overflow: hidden;
 }
 
+.reservationForm_input-container {
+  background-color: #fff;
+  display: flex;
+  gap: 24px;
+  grid-gap: 24px;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.reservationForm_input-group {
+  width: calc(33.33333% - 16px);
+}
+
+.reservationForm_input-group>label {
+  margin-bottom: 8px;
+}
+
+.reservationForm_input-group-people-count {
+  position: relative;
+}
+
+.reservationForm_input-people-count {
+  padding-right: 40px;
+}
+
+.reservationForm_input-group-people-count>span {
+  color: #a2a2a4;
+  position: absolute;
+  top: 42px;
+  right: 13.5px;
+}
+
+.reservationForm_button {
+  align-items: center;
+  background-color: #ff7757;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  height: 71px;
+  justify-content: center;
+  line-height: 58px;
+  width: 100%;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
 @media screen and (max-width:1280px) {
   .room_footer {
     align-items: flex-start;
@@ -413,5 +462,17 @@
     font-size: 25px;
     line-height: 36px;
     margin-bottom: 8px;
+  }
+  
+  .reservationForm_input-container {
+    flex-direction: column;
+    gap: 16px;
+    grid-gap: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+  
+  .reservationForm_input-group {
+    width: 100%;
   }
 }

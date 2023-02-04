@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!, except: [:search, :show]
   
   def search
+    @user = current_user
     if params[:keyword].present?
       @rooms = Room.where(['room_name LIKE? OR detail LIKE?', "%#{params[:keyword]}%", "%#{params[:keyword]}%"])
     elsif params[:area].present?
@@ -17,6 +18,7 @@ class RoomsController < ApplicationController
   end
   
   def new
+    @user = current_user
     @room = Room.new
   end
   
@@ -27,16 +29,19 @@ class RoomsController < ApplicationController
       flash[:notice] = "施設を登録しました"
       redirect_to  own_rooms_path
     else
-      flash[:notice] = "施設の登録に失敗しました"
+      flash[:notice_alert] = "施設の登録に失敗しました"
       render "new"
     end
   end
   
   def show
+    @user = current_user
     @room = Room.find(params[:id])
+    @reservation = Reservation.new
   end
   
   def edit
+    @user = current_user
     @room = Room.find(params[:id])
   end
   
@@ -46,7 +51,7 @@ class RoomsController < ApplicationController
       flash[:notice] = "施設情報を更新しました"
       redirect_to room_path
     else
-      flash[:notice] = "施設情報の更新に失敗しました"
+      flash[:notice_alert] = "施設情報の更新に失敗しました"
       render "edit"
     end
   end

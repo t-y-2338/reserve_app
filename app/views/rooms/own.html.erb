@@ -19,8 +19,8 @@
             <td><%= link_to image_tag(room.image.url), room %></td>
             <td><%= link_to "#{room.room_name}", room %></td>
             <td><%= room.detail %></td>
-            <td>¥<%= room.price.to_s(:delimited) %>~</td>
-            <td><%= room.created_at.to_s(:date_jp) %></td>
+            <td class="text-nowrap">¥<%= room.price.to_s(:delimited) %>~</td>
+            <td class="text-nowrap"><%= room.created_at.to_s(:date_jp) %></td>
             <td>
               <div class="dropdown">
                 <div class="d-flex align-items-center justify-content-center" data-toggle="dropdown" id="dropdown-button" role="button" aria-haspopup="true" aria-expanded="false">

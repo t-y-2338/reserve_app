@@ -6,5 +6,19 @@ ja:
         password: パスワード
         current_password: 現在のパスワード
         name: ユーザー名
-        image: アイコン画像
+        avater: アイコン画像
         introduction: 自己紹介
+      room:
+        room_name: 施設名
+        detail: 施設詳細
+        price: 料金
+        address: 住所
+        image: 施設画像
+      reservation:
+        start_date: チェックイン日
+        end_date: チェックアウト日
+        people: 人数
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      short: "%Y/%m/%d"

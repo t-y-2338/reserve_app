@@ -23,7 +23,7 @@
     
     <% if user_signed_in? %>
       <% if @room.user_id == current_user.id %>
-        <%= link_to edit_room_path, class:"roomDetailsHeader_link" do %>
+        <%= link_to edit_room_path(@room), class:"roomDetailsHeader_link" do %>
           <img src="https://rails-02-sample.herokuapp.com/assets/icons/edit-blue-51638a3e490277aa2df5f37102d45f5fcdfd8cd6c58fc5add90a958fab5c45af.svg">
           編集
         <% end %>
@@ -51,7 +51,38 @@
         <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
       </span>
       <p class="roomDetails_content"><%= @room.detail %></p>
-      <div class="reservationForm">予約する</div>
+      <div class="reservationForm">
+        <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <div class="reservationForm_input-container">
+          <div class="reservationForm_input-group">
+            <%= f.label :start_date, "チェックイン", class:"reservation_start_date" %>
+            <div class="reservationForm_input">
+              <%= f.date_field :start_date, class:"form_input" %>
+              <p class="errorMassage"><%= @reservation.errors.full_messages_for(:start_date).first %></p>
+            </div>
+          </div>
+          <div class="reservationForm_input-group">
+            <%= f.label :end_date, "チェックアウト", class:"reservation_end_date" %>
+            <div class="reservationForm_input">
+              <%= f.date_field :end_date, class:"form_input" %>
+              <p class="errorMassage"><%= @reservation.errors.full_messages_for(:end_date).first %></p>
+            </div>
+          </div>
+          <div class="reservationForm_input-group reservationForm_input-group-people-count">
+            <%= f.label :people, "人数", class:"reservation_people_num" %>
+            <%= f.text_field :people, class:"form_input reservationForm_input reservationForm_input-people-count", placeholder:"0" %>
+            <span>人</span>
+            <p class="errorMassage"><%= @reservation.errors.full_messages_for(:people).first %></p>
+          </div>
+        </div>
+          <% if user_signed_in? %>
+            <%= f.submit "予約する", class:"btn reservationForm_button" %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class:"btn reservationForm_button" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
