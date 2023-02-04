@@ -1,0 +1,48 @@
+<div class="form_wrapper">
+  <section class="form_container">
+    <h2>施設情報の編集</h2>
+    <%= form_with model: @room, local: true do |f| %>
+      <div class="roomsForm_input-group">
+        <%= f.label :room_name, "施設名", class:"form_label roomsForm_label form_label_required" %>
+        <div class="roomsForm_input">
+          <%= f.text_field :room_name, class:"form_input", placeholder:"ルーム名を入力" %>
+          <p class="errorMassage"><%= @room.errors.full_messages_for(:room_name).first %></p>
+        </div>
+      </div>
+      <div class="roomsForm_input-group">
+        <%= f.label :detail, "施設詳細", class:"form_label roomsForm_label form_label_required" %>
+        <div class="roomsForm_input">
+          <%= f.text_area :detail, class:"form_input", placeholder:"施設詳細を入力" %>
+          <p class="errorMassage"><%= @room.errors.full_messages_for(:detail).first %></p>
+        </div>
+      </div>
+      <div class="roomsForm_input-group">
+        <%= f.label :price, "料金", class:"form_label roomsForm_label form_label_required" %>
+        <div class="roomsForm_input">
+          <%= f.text_field :price, class:"form_input", placeholder:"一日あたりの料金を入力" %>
+          <p class="errorMassage"><%= @room.errors.full_messages_for(:price).first %></p>
+        </div>
+      </div>
+      <div class="roomsForm_input-group">
+        <%= f.label :address, "住所", class:"form_label roomsForm_label form_label_required" %>
+        <div class="roomsForm_input">
+          <%= f.text_field :address, class:"form_input", placeholder:"住所を入力" %>
+          <p class="errorMassage"><%= @room.errors.full_messages_for(:address).first %></p>
+        </div>
+      </div>
+      <div class="roomsForm_input-group">
+        <label class="roomsForm_label">施設画像</label>
+        <p class="roomsForm_input fileUpload_field">
+          <label class="fileUpload_label">
+            <span>画像をアップロード</span>
+            <%= f.file_field :image %>
+          </label>
+        </p>
+      </div>
+      <%= f.submit "保存", class:"btn roomsForm_button roomsForm_button-submit" %>
+    <% end %>
+    <%= link_to "キャンセル", :back, class:"roomsForm_button roomsForm_button-cancel" %>
+  </section>
+</div>
+
+<%= render 'shared/footer' %>

@@ -1,0 +1,198 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.errorMassage {
+  color: #ff4949;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.reservationsContainer {
+  margin-top: 40px;
+  margin-bottom: 260px;
+}
+
+.reservationConfirm_value, .reservationConfirm_label {
+  margin-bottom: 0;
+}
+
+.reservationConfirm_value-group {
+  align-items: baseline;
+  display: flex;
+  font-size: 16px;
+  justify-content: space-between;
+  line-height: 26px;
+  margin-bottom: 24px;
+}
+
+.reservationConfirm_label {
+  font-weight: 700;
+}
+
+.reservationConfirm_description {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.reservationConfirm_button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  font-size: 18px;
+  height: 58px;
+  justify-content: center;
+  width: 100%;
+}
+
+.reservationConfirm_button-submit {
+  background-color: #ff7757;
+  color: #fff;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.reservationConfirm_button-cancel {
+  border: 1px solid #e0e0e0;
+  color: #6a6a6a;
+  line-height: 44px;
+  
+  &:hover {
+    color: #6a6a6a;
+  }
+}
+
+.formWrapper {
+  display: flex;
+  height: fit-content;
+  padding: 40px 0 180px;
+}
+
+.formContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  margin: auto;
+  width: 702px;
+}
+
+.reservationsDetails_image {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.reservationsDetails_title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reservationsDetails_room-name {
+  color: #767e86;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.reservationsDetails_room-price {
+  color: #ff7757;
+  font-family: Lato,sans-serif;
+  font-size: 28px;
+  line-height: 39px;
+  margin-bottom: 0;
+}
+
+.reservationsDetails_room-address {
+  color: #767e86;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 15px;
+}
+
+.reservationsDetails_room-content {
+  color: #172432;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 24px;
+}
+
+.reservationsForm__input-group {
+  margin-bottom: 24px;
+}
+
+.reservationsForm__button {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 700;
+  height: 45px;
+  justify-content: center;
+  line-height: 21px;
+  width: 100%;
+}
+
+.reservationsForm__button-submit {
+  background-color: #ff7757;
+  color: #fff;
+  margin-bottom: 16px;
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.reservationsForm__button-cancel {
+  border: 1px solid #e0e0e0;
+  color: #333;
+  line-height: 44px;
+  
+  &:hover {
+    color: #333;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .reservationsDetails_room-price {
+    font-size: 25px;
+    line-height: 32px;
+    margin-bottom: 8px;
+  }
+}
+
+@media screen and (max-width:960px) {
+  .formContainer {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .formWrapper {
+    padding: 24px 0 100px;
+  }
+  
+  .formContainer {
+    width: calc(100% - 32px);
+  }
+  
+  .reservationsDetails_title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  .reservationsDetails_room-name {
+    font-size: 21px;
+    line-height: 28px;
+  }
+  
+  .reservationsDetails_room-price {
+    font-size: 21px;
+    line-height: 33px;
+    margin-bottom: 8px;
+  }
+}

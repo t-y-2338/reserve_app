@@ -1,0 +1,63 @@
+<section class="container account_section">
+  <h2>設定</h2>
+  <div class="user_container">
+    <ul class="sideNav">
+      <li class="sideNav_item"><%= link_to "アカウント", users_account_path %></li>
+      <li class="sideNav_item tabNav_item_active"><%= link_to "プロフィール", users_profile_path %></li>
+    </ul>
+    
+    <div class="accountInfo">
+      <ul class="tabNav">
+        <li class="tabNav_item"><%= link_to "アカウント", users_account_path %></li>
+        <li class="tabNav_item tabNav_item_active"><%= link_to "プロフィール", users_profile_path %></li>
+      </ul>
+      
+      <div class="accountInfo_header">
+        <h3>プロフィール</h3>
+      </div>
+      
+      <%= form_for @user, url: users_profile_edit_path do |f| %>
+　    <% if @user.errors.any? %>
+　    <% end %>
+
+        <div class="accountInfo_input-group">
+          <label class="accountInfo_input_label">アイコン画像</label>
+          <p class="fileUpload_field">
+            <%= image_tag current_user.avatar.url, class:"fileUpload_image" %>
+            <label class="fileUpload_label">
+              <span>画像をアップロード</span>
+              <%= f.file_field :avatar %>
+            </label>
+          </p>
+        </div>
+        <div class="accountInfo_input-group">
+          <label class="accountInfo_input_label">名前</label>
+          <div class="accountInfo_input_wrapper">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:name) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:name).first %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="accountInfo_input-group">
+          <label class="accountInfo_input_label">自己紹介</label>
+          <div class="accountInfo_input_wrapper">
+            <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:introduction) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:introduction).first %></p>
+            <% end %>
+          </div>
+        </div>
+        
+        <div class="accountInfo_buttons">
+          <%= link_to "キャンセル", :back, class:"btn accountInfo_button accountInfo_button_cancel" %>
+          <%= f.submit "保存", class:"btn accountInfo_button accountInfo_button_save" %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+    
+</section>
+
+<%= render "shared/footer" %>

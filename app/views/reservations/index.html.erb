@@ -1,0 +1,84 @@
+<section class="container reservationsContainer">
+  <h2>予約済み一覧</h2>
+    <div class="table_responsive">
+      <table class="table align-middle ownRoomsTable">
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>施設名</th>
+            <th>紹介文</th>
+            <th class="text-nowrap">合計料金</th>
+            <th class="text-nowrap">チェックイン</th>
+            <th class="text-nowrap">チェックアウト</th>
+            <th class="text-nowrap">予約確定日時</th>
+            <th></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <% @user.reservations.each do |reservation| %>
+          <tr>
+            <td><%= link_to image_tag(reservation.room.image.url), "rooms/#{reservation.room_id}" %></td>
+            <td><%= link_to "#{reservation.room.room_name}", "rooms/#{reservation.room_id}" %></td>
+            <td><%= reservation.room.detail %></td>
+            <td class="text-nowrap">¥<%= reservation.total_price.to_s(:delimited) %></td>
+            <td class="text-nowrap"><%= l reservation.start_date %></td>
+            <td class="text-nowrap"><%= l reservation.end_date %></td>
+            <td class="text-nowrap"><%= l reservation.created_at %></td>
+            <td>
+              <div class="dropdown">
+                <div class="d-flex align-items-center justify-content-center" data-toggle="dropdown" id="dropdown-button" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img alt="3点メニューアイコン" src="https://rails-02-sample.herokuapp.com/assets/icons/three-dot-menu-0c042cde96cc73e058e97d09a24944eb2914eb8c152d418dc6fc6964251fdaa2.svg">
+                </div>
+                <ul class="dropdown-menu dropdownMenu" aria-labelledby="dropdown-button" style="position: absolute; inset: 0px auto auto 0px; margin: 0px;">
+                  <li class="dropdown_item">
+                    <%= link_to "再予約", [:edit, reservation] %>
+                  </li>
+                  <li class="dropdown_item dropdown_item-destroy">
+                    <a href="", data-toggle="modal", data-target="#modal-confirm", data-backdrop="true">予約を削除</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</section>
+
+
+<%= render 'shared/footer' %>
+
+<% @reservations.each do |reservation| %>
+<div class="modal fade" id="modal-confirm" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="z-index: 1051; display: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h5 id="modal-confirmLabel" class="modal-title">以下の予約を削除しますか？</h5>
+      </div>
+      <div class="modal-body">
+        <div class="confirmBody">
+          <%= image_tag reservation.room.image.url, class:"confirmBody_image" %>
+            <div>
+              <%= reservation.room.room_name %>
+              </br>
+              <%= l reservation.start_date %> 〜 <%= l reservation.end_date %>
+              </br>
+              <%= reservation.people %>人
+              </br>
+              ¥ <%= reservation.total_price.to_s(:delimited) %>
+            </div>
+        </div>
+        よろしければ「削除」ボタンを押してください。
+      </div>
+      <div class="modal-footer">
+        <button class="btn cancel" data-dismiss="modal" aria-hidden="true">キャンセル</button>
+        <%= button_to "削除", reservation, method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>

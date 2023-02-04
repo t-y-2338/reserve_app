@@ -1,0 +1,49 @@
+<section class="container ownRoomsContainer">
+  <h2>登録済み一覧</h2>
+    <div class="table_responsive">
+      <table class="table align-middle ownRoomsTable">
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>施設名</th>
+            <th>紹介文</th>
+            <th>料金</th>
+            <th>作成日</th>
+            <th></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <% @user.rooms.each do |room| %>
+          <tr>
+            <td><%= link_to image_tag(room.image.url), room %></td>
+            <td><%= link_to "#{room.room_name}", room %></td>
+            <td><%= room.detail %></td>
+            <td class="text-nowrap">¥<%= room.price.to_s(:delimited) %>~</td>
+            <td class="text-nowrap"><%= room.created_at.to_s(:date_jp) %></td>
+            <td>
+              <div class="dropdown">
+                <div class="d-flex align-items-center justify-content-center" data-toggle="dropdown" id="dropdown-button" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img alt="3点メニューアイコン" src="https://rails-02-sample.herokuapp.com/assets/icons/three-dot-menu-0c042cde96cc73e058e97d09a24944eb2914eb8c152d418dc6fc6964251fdaa2.svg">
+                </div>
+                <ul class="dropdown-menu dropdownMenu" aria-labelledby="dropdown-button" style="position: absolute; inset: 0px auto auto 0px; margin: 0px;">
+                  <li class="dropdown_item">
+                    <%= link_to "編集", [:edit, room] %>
+                  </li>
+                  <li class="dropdown_item dropdown_item-destroy">
+                    <a href="", data-toggle="modal", data-target="#modal-confirm", data-backdrop="true">施設を削除</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</section>
+
+
+<%= render 'shared/footer' %>
+
+<%= render 'shared/modal' %>

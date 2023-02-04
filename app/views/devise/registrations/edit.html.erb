@@ -1,0 +1,78 @@
+<section class="container account_section">
+  <h2>設定</h2>
+  <div class="user_container">
+    <ul class="sideNav">
+      <li class="sideNav_item tabNav_item_active"><%= link_to "アカウント", users_account_path %></li>
+      <li class="sideNav_item"><%= link_to "プロフィール", users_profile_path %></li>
+    </ul>
+    
+    <div class="accountInfo">
+      <ul class="tabNav">
+        <li class="tabNav_item tabNav_item_active"><%= link_to "アカウント", users_account_path %></li>
+        <li class="tabNav_item"><%= link_to "プロフィール", users_profile_path %></li>
+      </ul>
+      
+      <div class="accountInfo_header">
+        <h3>アカウント</h3>
+      </div>
+      
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+　    <% if @user.errors.any? %>
+　    <% end %>
+
+        <div class="accountInfo_input-group">
+          <%= f.label :email, "メールアドレス", class:"accountInfo_input_label" %>
+          <div class="accountInfo_input_wrapper">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:email) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:email).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="accountInfo_input-group">
+          <%= f.label :password, class:"accountInfo_input_label" do %>
+            <span>新しいパスワード</span></br>
+            <span class="accountInfo_input_label_caption">※変更する場合のみ</span>
+          <% end %>
+          <div class="accountInfo_input_wrapper">
+            <%= f.password_field :password, autocomplete: "new-password", placeholder:"新しいパスワードを入力", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:password) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:password).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="accountInfo_input-group">
+          <%= f.label :password_confirmation, class:"accountInfo_input_label" do %>
+            <span>新しいパスワード(確認)</span></br>
+            <span class="accountInfo_input_label_caption">※変更する場合のみ</span>
+          <% end %>
+          <div class="accountInfo_input_wrapper">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"新しいパスワードを入力", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:password_confirmation) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="accountInfo_input-group">
+          <%= f.label :current_password, "現在のパスワード", class:"accountInfo_input_label" %>
+          <div class="accountInfo_input_wrapper">
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder:"現在のパスワードを入力", class:"accountInfo_input" %>
+            <% if @user.errors.include?(:current_password) %>
+              <p class="alert-warning"><%= @user.errors.full_messages_for(:current_password).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="accountInfo_buttons">
+          <%= link_to "キャンセル", :back, class:"btn accountInfo_button accountInfo_button_cancel" %>
+          <%= f.submit "Update", value:"保存", class:"btn accountInfo_button accountInfo_button_save" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<%= render "shared/footer" %>

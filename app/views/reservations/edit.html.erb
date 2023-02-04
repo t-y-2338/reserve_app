@@ -1,0 +1,45 @@
+<div class="formWrapper">
+  <section class="formContainer">
+    <h2>再予約する</h2>
+    <div class="reservationsDetails">
+      <%= image_tag @reservation.room.image.url, class:"reservationsDetails_image" %>
+      <div class="reservationsDetails_title">
+        <span class="reservationsDetails_room-name"><%= @reservation.room.room_name %></span>
+        <span class="reservationsDetails_room-price">¥<%= @reservation.room.price.to_s(:delimited) %>~</span>
+      </div>
+      <span class="reservationsDetails_room-address"><%= @reservation.room.address %></span>
+      <span class="room_stars">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+        <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+      </span>
+      <p class="reservationsDetails_room-content"><%= @reservation.room.detail %></p>
+    </div>
+    <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %>
+    <%= f.hidden_field :id %>
+    <%= f.hidden_field :room_id %>
+      <div class="reservationsForm__input-group">
+        <%= f.label :start_date, "チェックイン", class:"form_label reservationsForm_label form_label_required" %>
+        <%= f.date_field :start_date, class:"form_input" %>
+        <p class="errorMassage"><%= @reservation.errors.full_messages_for(:start_date).first %></p>
+      </div>
+      <div class="reservationsForm__input-group">
+        <%= f.label :end_date, "チェックアウト", class:"form_label reservationsForm_label form_label_required" %>
+        <%= f.date_field :end_date, class:"form_input" %>
+        <p class="errorMassage"><%= @reservation.errors.full_messages_for(:end_date).first %></p>
+      </div>
+      <div class="reservationsForm__input-group reservationForm_input-group-people-count">
+        <%= f.label :people, "人数", class:"form_label reservation_people_num form_label_required" %>
+        <%= f.text_field :people, class:"form_input reservationForm_input reservationForm_input-people-count", placeholder:"0" %>
+        <span>人</span>
+        <p class="errorMassage"><%= @reservation.errors.full_messages_for(:people).first %></p>
+      </div>
+      <%= f.submit "再予約する", class:"btn reservationsForm__button reservationsForm__button-submit" %>
+    <% end %>
+    <%= link_to "キャンセル", room_path, class:"btn reservationsForm__button reservationsForm__button-cancel" %>
+  </section>
+</div>
+
+<%= render 'shared/footer' %>

@@ -1,0 +1,48 @@
+<div class="searchRoomsForm_container">
+      
+  <%= form_with url: search_rooms_path, method: :get, local: true, class:"searchRoomsForm" do |f| %>
+    <div class="searchRoomsForm_input-group searchRoomsForm_input-group_area">
+      <img src="https://rails-02-sample.herokuapp.com/assets/icons/location-f99050d71eed25957ab10fa45301a9f665de4e918726bc58b1d038d2a1337a7a.svg">
+      <%= f.text_field :area, placeholder:"エリア名を入力", class:"form_input searchRoomsForm_input"%>
+    </div>
+    <div class="searchRoomsForm_input-group searchRoomsForm_input-group_keyword">
+      <img src="https://rails-02-sample.herokuapp.com/assets/icons/search-6ddc79988a28e9ba906fad22d395d6363099d88a0392c49df200e8f6bc9a8fec.svg">
+      <%= f.text_field :keyword, placeholder:"キーワードを入力", class:"form_input searchRoomsForm_input" %>
+    </div>
+    <%= f.submit "検索", class:"searchRoomsForm_button" %>
+  <% end %>
+
+</div>
+
+<div class="container rooms_container">
+  <p class="searchRooms_result">
+    <span class="searchRooms_result_count"><%= @rooms.count %></span>
+    件が見つかりました。
+  </p>
+  
+    <ul class="roomList">
+      <% @rooms.each do |room| %>
+        <li class="room">
+          <%= image_tag room.image.url, class:"room_image" %>
+          <div class="roomBody_wrapper">
+            <p class="room_name"><%= room.room_name %></p>
+            <p class="room_address"><%= room.address %></p>
+            <span class="room_stars">
+              <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+              <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+              <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+              <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+              <img src="https://rails-02-sample.herokuapp.com/assets/room/star-1544f5d9e9846039b88b7afca69bdd007b6a36405fbbbfaf4e1faba106f5a0b4.svg">
+            </span>
+            <p class="room_content"><%= room.detail %></p>
+            <div class="room_footer">
+              <p class="room_price">¥<%= room.price.to_s(:delimited) %>~</p>
+              <%= link_to "詳細はこちら", room, class:"room_link" %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+</div>
+
+<%= render 'shared/footer' %>
